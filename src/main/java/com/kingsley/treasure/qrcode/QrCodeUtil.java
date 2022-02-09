@@ -67,11 +67,11 @@ public class QrCodeUtil {
             picFormat = QRPicFormat.JPG;
             flag = false;
         }
-        if (picName.endsWith(QRPicFormat.PNG.format) || picName.endsWith(QRPicFormat.JPG.format)) {
+        if (picName.endsWith("." + QRPicFormat.PNG.format) || picName.endsWith("." + QRPicFormat.JPG.format)) {
             if (flag) {
                 System.out.println("图片格式将以picFormat参数为准！");
             }
-            picName = picName.substring(0, picName.length() - 3);
+            picName = picName.substring(0, picName.length() - 4);
         }
         String fullPath = picName + "." + picFormat.format;
         File file = new File(fullPath);
